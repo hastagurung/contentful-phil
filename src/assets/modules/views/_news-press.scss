@@ -1,0 +1,339 @@
+.news-header {
+  padding: 13px 0;
+
+  @include for-size(medium) {
+    padding: 28px 0;
+  }
+}
+
+.spotlight_left-column{
+  @include for-size(medium) {
+    width: 55%;
+    float: left;
+  }
+}
+
+.spotlight_right-column{
+  @include for-size(medium) {
+    width: 45%;
+    float: right;
+  }
+}
+
+.news-press-banner {
+  padding: calc(120px - 61px) 0 58px;
+  background-image: url("img/news-banner.png");
+  background-repeat: no-repeat;
+  background-position: 100px bottom;
+  background-size: 300px;
+
+  .home-page__heading {
+    max-width: 116px;
+
+    @include for-size(small) {
+      max-width: 100%;
+      font: normal bold 26px/1.31 "MarkOTBold", arial, sans-serif;
+    }
+    
+    @include for-size(medium) {
+      font: normal bold 46px/1.31 "MarkOTBold", arial, sans-serif;
+      margin-bottom: 0;
+    }
+  }
+
+  @include for-size(small) {
+    background-size: contain;
+    background-position: top right;
+    padding-bottom: 134px;
+  }
+
+  @include for-size(medium) {
+    padding: calc(180px - 107px) 0 187px;
+    background-size: 615px;
+    background-position: right bottom;
+  }
+}
+.spotlight-column-grid {
+  background-image: url("img/yellow-dot.png");
+  background-repeat: no-repeat;
+  background-position: left 101%;
+  background-size: 170px;
+  padding-bottom: 64px;
+  > div {
+    background: $pale-blue;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    @include for-size(small) {
+      padding-bottom: 32px;
+      padding-top: 32px;
+    }
+
+    @include for-size(extra-large) {
+      padding: 84px 0;
+    }
+  }
+  .news-page__title {
+    margin-bottom: 16px;
+
+    @include for-size(medium) {
+      margin-bottom: 24px;
+    }
+  }
+
+  @include for-size(extra-large) {
+    padding-bottom: 84px;
+    background-position: left 112%;
+    background-size: 403px;
+  }
+}
+.news-page {
+  @include e(title) {
+    @include for-size(medium) {
+      margin-bottom: 12px;
+    }
+    img {
+      margin-top: 1px;
+      margin-right: 11px;
+      @include for-size(medium) {
+        margin-top: 8px;
+      }
+    }
+    @include e(heading) {
+      // font-size: 26px;
+      color: $navy-blue;
+      font-size: 16px;
+      line-height: 24px;
+
+      @include for-size(small) {
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      @include for-size(medium) {
+        font-size: 26px;
+        line-height: 40px;
+      }
+    }
+  }
+  @include e(heading) {
+    color: $caribbean-green;
+    font: normal bold 18px/26px $font-family--primary-bold;
+
+    @include for-size(small) {
+      font: normal bold 26px/40px $font-family--primary-bold;
+    }
+
+    @include for-size(medium) {
+      font: normal bold 36px/52px $font-family--primary-bold;
+    }
+  }
+
+  @include e(mobile-image) {
+    margin-bottom: 16px;
+    @include for-size(small) {
+      margin-bottom: 24px;
+    }
+    @include for-size(medium) {
+      display: none;
+    }
+  }
+  @include e(date) {
+    font-size: 12px;
+    line-height: 18px;
+    display: inline-block;
+    margin: 16px 0;
+  }
+  @include e(left-content) {
+    color: $rolling-stone;
+    font-size: 16px;
+    line-height: 24px;
+    .IconTextLink {
+      font: normal 500 16px/1.56 "MarkOTMedium", arial, sans-serif;
+      margin-top: 12px;
+
+      @include for-size(small) {
+        margin-top: 24px;
+      }
+    }
+
+    @include for-size(medium) {
+      padding-right: 90px;
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    .desktop-view-paragraph{
+      margin-top: 16px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+
+      @include for-size(small) {
+        -webkit-line-clamp: 5;
+      }
+
+      @include for-size(medium) {
+        -webkit-line-clamp: 9;
+      }
+    }
+  }
+  @include e(content) {
+    @include m(no-image) {
+      padding-right: 0;
+    }
+  }
+
+  @include e(responsive-view) {
+    display: block;
+
+    @include for-size(medium) {
+      display: none;
+    }
+
+    @include e(paragraph) {
+      margin-top: 16px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+              line-clamp: 4; 
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  @include e(right-section-content) {
+    @include e(image-wrapper) {
+      border-radius: 14px;
+      overflow: hidden;
+      display: none;
+
+      @include for-size(medium) {
+        display: block;
+        max-width: 510px;
+        width: 100%;
+        margin-left: auto;
+      }
+    }
+  }
+
+  @include e(date-posted) {
+    float: left;
+    margin-right: 5px;
+    padding-right: 10px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 15px;
+      background-color: $rolling-stone;
+    }
+  }
+}
+.releases {
+  .releases-columns-grid {
+    @include e(content) {
+      color: $rolling-stone;
+      font-size: 12px;
+      line-height: 18px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #d1d1d1;
+
+      @include e(title) {
+        font-size: 16px;
+        line-height: 24px;
+        color: $navy-blue;
+        margin-bottom: 12px;
+
+        @include for-size(small) {
+          font-size: 18px;
+          line-height: 26px;
+        }
+
+        @include for-size(medium) {
+          font-size: 26px;
+          line-height: 40px;
+        }
+      }
+
+      .IconTextLink {
+        font: normal 500 12px/1.56 "MarkOTMedium", arial, sans-serif;
+        @include for-size(small) {
+          font: normal 500 16px/1.56 "MarkOTMedium", arial, sans-serif;
+        }
+      }
+
+      @include for-size(small) {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      @include for-size(medium) {
+        border-bottom: none;
+      }
+    }
+    &:last-child {
+      > div {
+        &:last-child {
+          .releases-columns-grid__content {
+            border-bottom: none;
+          }
+        }
+      }
+      &::before {
+        display: none;
+      }
+    }
+    &:first-child {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    @include for-size(medium) {
+      position: relative;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 36px;
+        right: 36px;
+        height: 1px;
+        background-color: #d1d1d1;
+      }
+    }
+  }
+}
+
+.all-releases {
+  padding-bottom: 44px;
+
+  @include for-size(small) {
+    padding-bottom: 64px;
+  }
+
+  @include for-size(medium) {
+    padding-bottom: 54px;
+  }
+
+}
+
+.spotlight-full {
+  width: 100%;
+  .news-page {
+    @include e(left-content) {
+      padding-right: 0px;
+      .desktop-view-paragraph {
+        margin-top: 0px;
+      }
+    }
+  }
+}
